@@ -3,6 +3,7 @@
 import http.client
 import http.client
 import argparse
+import sys
 
 # Set up argument parser
 parser = argparse.ArgumentParser(description='Send a file line by line to a server.')
@@ -18,7 +19,7 @@ if not args.file:
     print("Where:")
     print("  <file>         = The file to send, line by line.")
     print("  --ip           = The server's IP address (default is 127.0.0.1)")
-    print("  --port         = The server's port number (default is 5000)")
+    print("  --port         = The server's port number (default is 80)")
     sys.exit(1)
 
 # Get the IP address, port, and file from the command line
