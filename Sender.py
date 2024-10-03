@@ -12,6 +12,15 @@ parser.add_argument('--port', type=int, default=80, help='The server port (defau
 
 args = parser.parse_args()
 
+if not args.file:
+    print("\nERROR: Missing required arguments.\n")
+    print("Usage: python sender.py <file> [--ip <ip_address>] [--port <port>]\n")
+    print("Where:")
+    print("  <file>         = The file to send, line by line.")
+    print("  --ip           = The server's IP address (default is 127.0.0.1)")
+    print("  --port         = The server's port number (default is 5000)")
+    sys.exit(1)
+
 # Get the IP address, port, and file from the command line
 ip_address = args.ip
 port = args.port

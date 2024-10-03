@@ -20,7 +20,12 @@ def run(server_class=HTTPServer, handler_class=RequestHandler, port=80):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f"Server running on port {port}")
-    httpd.serve_forever()
+    try:
+        print(f"Server running on port {port}")
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer is shutting down.")
+        httpd.server_close()
 
 
 if __name__ == '__main__':
