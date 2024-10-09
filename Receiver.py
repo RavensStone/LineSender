@@ -19,7 +19,6 @@ class RequestHandler(BaseHTTPRequestHandler):
 def run(server_class=HTTPServer, handler_class=RequestHandler, port=80):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
-    print(f"Server running on port {port}")
     try:
         print(f"Server running on port {port}")
         httpd.serve_forever()
